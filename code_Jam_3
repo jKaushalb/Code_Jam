@@ -1,0 +1,66 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+import numpy as np
+#q=0
+#l=[]
+i=0
+k=0
+t=int(input())
+for i in range(0,t) :
+    ##print(i)
+    l=[]
+    n=int(input())
+    for k in range(0,n) :
+        d=input() #take input as string
+        x,y=d.split() #split input
+        x=int(x)
+        y=int(y)
+        l.append([x,y,k])
+    l.sort()
+    a=np.array(l)
+    #print(a)
+    c=0
+    j=0
+    s=""
+    x=0
+    q=0
+    r=np.zeros((1001,), dtype=int)
+    #array([0, 0, 0, 0, 0])
+    for x in range(0,n) :
+        v=a[x][0]
+       # print(a[x][1])
+       # print(n)
+        if c<=v:
+            #s=s+"C"
+            r[[a[x][2]]]=1
+            c=a[x][1]
+        elif j<=v:
+            #s=s+"J"
+            r[[a[x][2]]]=2
+            j=a[x][1]
+        else:
+            print("Case #{0}:".format(i+1),"IMPOSSIBLE")
+            q=1
+            break;
+           
+    if q!=1:
+        print("Case #{0}: ".format(i+1),end="")
+        for p in r:
+            if p==1:
+            
+                print("C",end="")
+            
+            elif p==2:
+            
+                print("J",end="")
+        print()
+            
+        #print("Case #{0}:".format(i+1),s)
+       # print(i+1)
+        
+        
